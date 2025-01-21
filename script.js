@@ -14,7 +14,7 @@ class LotteryMachine {
         ball: "ball",
         hoverArea: "hover-area",
       },
-      size: 340,
+      size: 240,
       ball: {
         count: 48,
         size: 100,
