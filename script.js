@@ -16,7 +16,7 @@ class LotteryMachine {
       },
       size: 240,
       ball: {
-        count: 48,
+        count: 32,
         size: 100,
         colors: [
           "#c15bb6",
@@ -482,3 +482,29 @@ const handleClick = () => {
 };
 
 $button.on("click", handleClick);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const lotteryMachine = document.querySelector(".lottery-machine");
+  const targetDiv = document.querySelector(".background-image");
+  let div = document.createElement("div");
+  div.classList.add("lottery")
+
+  div.appendChild(lotteryMachine);
+  targetDiv.appendChild(div);
+caldWindow()
+});
+
+function caldWindow(){
+console.log("calc")
+
+	let width = window.innerWidth;
+	let height = window.innerHeight;
+
+	const spanWidth = document.querySelector(".userWidth");
+	const spanHeight = document.querySelector(".userHeight");
+
+	spanWidth.innerHTML = `w: ${width}`;
+	spanHeight.innerHTML = `h: ${height}`;
+}
+
+window.addEventListener("resize", caldWindow);
