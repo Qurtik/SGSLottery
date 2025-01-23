@@ -381,7 +381,8 @@ class LotteryMachine {
       return new Promise((resolve) => {
         ball
           .css({ zIndex: 2 })
-          .html(randomNumber)
+           .html(randomNumber)
+         //  .html("Marina")
           .addClass("no-transition")
           .removeClass("blink animation-roll animation-up");
 
