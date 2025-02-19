@@ -1,3 +1,31 @@
+const participants = [
+  "Владислав",
+  "Марина Первушина",
+  "Екатерина",
+];
+
+let prevWinner = [];
+
+function getWinner() {
+  if (participants.length === prevWinner.length) {
+    alert("Все участники выйграли");
+    return "";
+  }
+
+  const max = Math.floor(participants.length - 1); // Округляем вниз
+  let index = null;
+  do {
+    index = Math.floor(Math.random() * (max + 1));
+  } while (prevWinner.indexOf(index) !== -1);
+
+  const winnerName = participants[index];
+  console.log(prevWinner);
+
+  prevWinner.push(index);
+
+  return `${winnerName} <br> ${index + 1}`;
+}
+
 // LotteryMachine Class
 class LotteryMachine {
   constructor(opt = {}) {
@@ -381,8 +409,9 @@ class LotteryMachine {
       return new Promise((resolve) => {
         ball
           .css({ zIndex: 2 })
-           .html(randomNumber)
-         //  .html("Marina")
+          //   .html(randomNumber)
+          //  .html("Marina<br>12")
+          .html(getWinner())
           .addClass("no-transition")
           .removeClass("blink animation-roll animation-up");
 
@@ -464,7 +493,7 @@ const $button = $("button#play");
 const ballAnimationOpt = {
   width: 240,
   height: 240,
-  fontSize: 96,
+  fontSize: 46,
 };
 
 // init LotteryMachine
@@ -488,24 +517,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const lotteryMachine = document.querySelector(".lottery-machine");
   const targetDiv = document.querySelector(".background-image");
   let div = document.createElement("div");
-  div.classList.add("lottery")
+  div.classList.add("lottery");
 
   div.appendChild(lotteryMachine);
   targetDiv.appendChild(div);
-caldWindow()
+  //   caldWindow();
 });
 
-function caldWindow(){
-console.log("calc")
+function caldWindow() {
+  console.log("calc");
 
-	let width = window.innerWidth;
-	let height = window.innerHeight;
+  let width = window.innerWidth;
+  let height = window.innerHeight;
 
-	const spanWidth = document.querySelector(".userWidth");
-	const spanHeight = document.querySelector(".userHeight");
+  const spanWidth = document.querySelector(".userWidth");
+  const spanHeight = document.querySelector(".userHeight");
 
-	spanWidth.innerHTML = `w: ${width}`;
-	spanHeight.innerHTML = `h: ${height}`;
+  spanWidth.innerHTML = `w: ${width}`;
+  spanHeight.innerHTML = `h: ${height}`;
 }
 
 window.addEventListener("resize", caldWindow);
