@@ -95,7 +95,7 @@ const participants = [
   "Елена Черкашина",
   "Мария Фаляшина",
   "Виктор Сурков",
-  "евгений Зиновьев",
+  "Евгений Зиновьев",
   "Наталья Щукина",
   "Инна Евтушенко",
   "Юлия Попова",
@@ -160,11 +160,13 @@ const participants = [
   "Аракси Арутюнян",
   "Александр Миломаев",
   "Александр Рехтин",
+  "Владислав Селезов",
 ];
 
-let prevWinner = [];
+let prevWinner = [19, 26, 103, 154];
 
 function getWinner() {
+	console.log("prevWinner", prevWinner);
   if (participants.length === prevWinner.length) {
     alert("Все участники выйграли");
     return "";
@@ -651,7 +653,7 @@ const $button = $("button#play");
 const ballAnimationOpt = {
   width: 240,
   height: 240,
-  fontSize: 46,
+  fontSize: 42,
 };
 
 // init LotteryMachine
