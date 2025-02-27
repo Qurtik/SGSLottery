@@ -163,7 +163,7 @@ const participants = [
   "Владислав Селезов",
 ];
 
-let prevWinner = [19, 26, 103, 117, 154];
+let prevWinner = [19, 26, 103, 117, 154, 88, 47];
 
 function getWinner() {
 	console.log("prevWinner", prevWinner);
