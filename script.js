@@ -163,7 +163,7 @@ const participants = [
   "Владислав Селезов",
 ];
 
-let prevWinner = [19, 26, 103, 154];
+let prevWinner = [19, 26, 103, 117, 154];
 
 function getWinner() {
 	console.log("prevWinner", prevWinner);
@@ -697,4 +697,4 @@ function caldWindow() {
   spanHeight.innerHTML = `h: ${height}`;
 }
 
-window.addEventListener("resize", caldWindow);
+// window.addEventListener("resize", caldWindow);
