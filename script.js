@@ -697,4 +697,4 @@ function caldWindow() {
   spanHeight.innerHTML = `h: ${height}`;
 }
 
-window.addEventListener("resize", caldWindow);
+// window.addEventListener("resize", caldWindow);
