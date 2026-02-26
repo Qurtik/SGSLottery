@@ -419,7 +419,8 @@ function getWinner() {
 
   prevWinner.push(index);
 
-  return `${winnerName} <br> ${index + 1}`;
+  return winnerName;
+//   return `${winnerName} <br> ${index + 1}`;
 }
 
 // LotteryMachine Class
